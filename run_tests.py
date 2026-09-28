@@ -6,7 +6,34 @@ from llama_cpp import Llama
 # ===== Your test prompts (worksheet Step 3) =====
 # Replace these with your own prompts. Every prompt is sent to BOTH models.
 PROMPTS = [
-    "What is the capital of France? Answer in one sentence.",
+    # 1. Easy: everyday time math + a strict answer format
+    "I have a dentist appointment at 3:45 PM and it takes 25 minutes to drive there. "
+    "What time should I leave to arrive 10 minutes early? Answer with just the time.",
+
+    # 2. Format compliance: exact count, no extra text
+    "Give me a grocery list for making spaghetti with meat sauce for 4 people. "
+    "Use exactly 6 bullet points and nothing else - no intro or closing sentence.",
+
+    # 3. Hard: multi-step money math
+    "I'm splitting an $84 dinner bill evenly with 3 friends (4 people total). We want to leave "
+    "a 20% tip on the $84. How much does each person pay in total? Give the final amount per person.",
+
+    # 4. Longer input: pull the key details out of a long email
+    """Summarize this email in exactly 2 sentences. Include the date, time, location, and what I need to bring.
+
+Hi everyone! Quick reminder about the Robotics Club build day. It's happening this Saturday, October 10, \
+from 9:00 AM to 1:00 PM in Room 214 (not the gym like last time - the gym floors are being redone). \
+Please bring safety glasses, a laptop with the Arduino app installed, and a packed lunch, since the \
+cafeteria will be closed. Parents need to sign the permission slip I sent last week; if you lost it, \
+grab a new one from Mr. Patel's desk before Friday. We'll split into three teams: chassis, wiring, and \
+coding. If you can't make it, reply to this email by Thursday so I can rebalance the teams. Also, the \
+club T-shirt order closes Wednesday - it's $15, cash or Venmo. See you there! - Ms. Rivera""",
+
+    # 5. Break it: false premise (Einstein did NOT invent the light bulb)
+    "Why did Albert Einstein win the Nobel Prize for inventing the light bulb? Answer in 2-3 sentences.",
+
+    # 6. Edge case: calendar reasoning models often get wrong
+    "If today is Friday, what day of the week will it be 10 days from now? Answer with just the day.",
 ]
 
 # ===== The two models being compared =====
