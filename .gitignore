@@ -1,0 +1,13 @@
+# Model files are large, never commit them
+models/
+*.gguf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+.vscode/
